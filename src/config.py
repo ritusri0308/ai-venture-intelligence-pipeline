@@ -5,6 +5,10 @@ Configuration management for the Venture Intelligence Data Ingestion Pipeline.
 import os
 from pathlib import Path
 from typing import List
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if present
+load_dotenv()
 
 # Base paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +27,7 @@ GITHUB_API_BASE = "https://api.github.com"
 # LLM Provider Fallback Chain (litellm model names)
 LLM_FALLBACK_CHAIN: List[str] = [
     "gemini/gemini-1.5-flash",
-    "groq/llama-3.3-70b-versatile",
+    "groq/llama-3.1-8b-instant",
     "deepseek/deepseek-chat",
 ]
 

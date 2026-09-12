@@ -383,5 +383,16 @@
     "job_url": "https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1",
     "collected_at": "2026-09-11T13:23:41.626246+00:00",
     "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"JOB\",\"source\":{\"name\":\"WeWorkRemotely\",\"url\":\"https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1\"},\"content\":{\"company\":\"Tech Startup\",\"date\":\"2026-09-04\",\"is_remote\":true,\"role_family\":\"Engineering\",\"title\":\"Lemon.io: Senior React Native Developer\",\"job_url\":\"https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1\",\"location\":null},\"collectedAt\":\"2026-09-11T13:23:41.626246+00:00\"}"
+  },
+  {
+    "id": 36,
+    "company": "Zep",
+    "title": "Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering",
+    "job_date": "2026-09-11",
+    "is_remote": 0,
+    "role_family": "Engineering",
+    "job_url": "https://news.ycombinator.com/item?id=49661645",
+    "collected_at": "2026-09-12T04:37:35.309588+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"JOB\",\"source\":{\"name\":\"HackerNews Jobs\",\"url\":\"https://news.ycombinator.com/item?id=49661645\"},\"content\":{\"company\":\"Zep\",\"date\":\"2026-09-11\",\"is_remote\":false,\"role_family\":\"Engineering\",\"title\":\"Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering\",\"job_url\":\"https://news.ycombinator.com/item?id=49661645\",\"location\":null},\"collectedAt\":\"2026-09-12T04:37:35.309588+00:00\"}"
   }
 ]

@@ -10098,5 +10098,75 @@
     "source_url": "https://www.redoubt.agency",
     "collected_at": "2026-09-11T13:35:46.730258+00:00",
     "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://www.redoubt.agency\"},\"content\":{\"entityName\":\"Redoubt Insurance\",\"data\":{\"employeeCount\":0,\"foundingYear\":null,\"location\":\"Salt Lake City, UT, USA\",\"description\":\"Commercial insurance for small businesses\"}},\"collectedAt\":\"2026-09-11T13:35:46.730258+00:00\"}"
+  },
+  {
+    "id": 1011,
+    "entity_name": "Expent",
+    "employee_count": 10,
+    "description": "Procure the right software 5x faster",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://www.expent.ai/",
+    "collected_at": "2026-09-12T04:36:53.314772+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://www.expent.ai/\"},\"content\":{\"entityName\":\"Expent\",\"data\":{\"employeeCount\":10,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA; Remote\",\"description\":\"Procure the right software 5x faster\"}},\"collectedAt\":\"2026-09-12T04:36:53.314772+00:00\"}"
+  },
+  {
+    "id": 1012,
+    "entity_name": "Liva",
+    "employee_count": 4,
+    "description": "Audio & Video Data",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://www.theliva.ai",
+    "collected_at": "2026-09-12T04:36:53.337919+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://www.theliva.ai\"},\"content\":{\"entityName\":\"Liva\",\"data\":{\"employeeCount\":4,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA\",\"description\":\"Audio & Video Data\"}},\"collectedAt\":\"2026-09-12T04:36:53.337919+00:00\"}"
+  },
+  {
+    "id": 1013,
+    "entity_name": "Markit",
+    "employee_count": 4,
+    "description": "Compliance that makes products ready for global markets.",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://markittrade.com",
+    "collected_at": "2026-09-12T04:36:53.337919+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://markittrade.com\"},\"content\":{\"entityName\":\"Markit\",\"data\":{\"employeeCount\":4,\"foundingYear\":null,\"location\":\"Atlanta, GA, USA\",\"description\":\"Compliance that makes products ready for global markets.\"}},\"collectedAt\":\"2026-09-12T04:36:53.337919+00:00\"}"
+  },
+  {
+    "id": 1014,
+    "entity_name": "Lab0",
+    "employee_count": 5,
+    "description": "AI FDEs to make your B2B SaaS Go Live in Days, not Months",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://lab0.ai",
+    "collected_at": "2026-09-12T04:36:53.337919+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://lab0.ai\"},\"content\":{\"entityName\":\"Lab0\",\"data\":{\"employeeCount\":5,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA\",\"description\":\"AI FDEs to make your B2B SaaS Go Live in Days, not Months\"}},\"collectedAt\":\"2026-09-12T04:36:53.337919+00:00\"}"
+  },
+  {
+    "id": 1015,
+    "entity_name": "Workers Io",
+    "employee_count": 2,
+    "description": "Simulation Environments for Verifying Mission Critical Software",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://workers.io",
+    "collected_at": "2026-09-12T04:36:53.346297+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://workers.io\"},\"content\":{\"entityName\":\"Workers Io\",\"data\":{\"employeeCount\":2,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA\",\"description\":\"Simulation Environments for Verifying Mission Critical Software\"}},\"collectedAt\":\"2026-09-12T04:36:53.346297+00:00\"}"
+  },
+  {
+    "id": 1016,
+    "entity_name": "Vorelios",
+    "employee_count": 2,
+    "description": "A foundation model for engineering physics",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://vorelios.com",
+    "collected_at": "2026-09-12T04:36:53.346297+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://vorelios.com\"},\"content\":{\"entityName\":\"Vorelios\",\"data\":{\"employeeCount\":2,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA\",\"description\":\"A foundation model for engineering physics\"}},\"collectedAt\":\"2026-09-12T04:36:53.346297+00:00\"}"
+  },
+  {
+    "id": 1017,
+    "entity_name": "Sona8",
+    "employee_count": 4,
+    "description": "Voice agents that talk to employees enabling transformations ",
+    "source_name": "Y Combinator Directory",
+    "source_url": "https://sona8.com",
+    "collected_at": "2026-09-12T04:36:53.346297+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"STARTUP\",\"source\":{\"name\":\"Y Combinator Directory\",\"url\":\"https://sona8.com\"},\"content\":{\"entityName\":\"Sona8\",\"data\":{\"employeeCount\":4,\"foundingYear\":null,\"location\":\"San Francisco, CA, USA\",\"description\":\"Voice agents that talk to employees enabling transformations \"}},\"collectedAt\":\"2026-09-12T04:36:53.346297+00:00\"}"
   }
 ]

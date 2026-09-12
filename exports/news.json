@@ -88,5 +88,105 @@
     "summary": "In 2024, Maven Robotics was brand new, and they had nothing — “a cartoon of a robot and a team of people,” CEO and co-founder Hamza Derbas told TechCrunch.\nStill, they heard a large consumer goods company with logistics needs was in town to meet with four rival robot companies about automation. Derbas talked his way into a meeting with the company and, instead of talking about his views on robots,",
     "collected_at": "2026-09-11T13:22:30.849792+00:00",
     "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/10/maven-robotics-wants-to-steal-your-robot-deployment-deal/\"},\"content\":{\"title\":\"Maven Robotics wants to steal your robot deployment deal\",\"published_date\":\"2026-09-10T14:17:37+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/10/maven-robotics-wants-to-steal-your-robot-deployment-deal/\",\"summary\":\"In 2024, Maven Robotics was brand new, and they had nothing — “a cartoon of a robot and a team of people,” CEO and co-founder Hamza Derbas told TechCrunch.\\nStill, they heard a large consumer goods company with logistics needs was in town to meet with four rival robot companies about automation. Derbas talked his way into a meeting with the company and, instead of talking about his views on robots,\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-11T13:22:30.849792+00:00\"}"
+  },
+  {
+    "id": 10,
+    "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
+    "published_date": "2026-09-11T22:58:17+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
+    "summary": "Mecka AI, a startup that collects and analyzes human motion data to train humanoid robots and other robotics, is nearing a new round led by Sequoia Capital at a valuation of about $500 million, according to two people with knowledge of the deal.\nThe new financing comes just three months after Mecka announced that it raised $60 million in a round led by Framework Ventures that included participatio",
+    "collected_at": "2026-09-12T04:37:22.595840+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/\"},\"content\":{\"title\":\"Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data\",\"published_date\":\"2026-09-11T22:58:17+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/\",\"summary\":\"Mecka AI, a startup that collects and analyzes human motion data to train humanoid robots and other robotics, is nearing a new round led by Sequoia Capital at a valuation of about $500 million, according to two people with knowledge of the deal.\\nThe new financing comes just three months after Mecka announced that it raised $60 million in a round led by Framework Ventures that included participatio\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:22.595840+00:00\"}"
+  },
+  {
+    "id": 11,
+    "title": "Y Combinator’s Garry Tan wants US open-weight AI labs to ‘distill’ frontier models, too",
+    "published_date": "2026-09-11T20:59:47+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/",
+    "summary": "When it comes to Chinese AI labs using distillation techniques to extract knowledge from frontier model makers, Y Combinator CEO Garry Tan is hoping regulators stay out of it. In fact, he thinks U.S. AI labs should perhaps play the same game.\n“I would do nothing,” he told CNBC in an interview earlier this week. “We could argue that there should be an American distillation regime.”\nHe elaborated to",
+    "collected_at": "2026-09-12T04:37:22.760440+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/\"},\"content\":{\"title\":\"Y Combinator’s Garry Tan wants US open-weight AI labs to ‘distill’ frontier models, too\",\"published_date\":\"2026-09-11T20:59:47+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/\",\"summary\":\"When it comes to Chinese AI labs using distillation techniques to extract knowledge from frontier model makers, Y Combinator CEO Garry Tan is hoping regulators stay out of it. In fact, he thinks U.S. AI labs should perhaps play the same game.\\n“I would do nothing,” he told CNBC in an interview earlier this week. “We could argue that there should be an American distillation regime.”\\nHe elaborated to\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:22.760440+00:00\"}"
+  },
+  {
+    "id": 12,
+    "title": "OpenAI’s feud with mathematicians is only escalating",
+    "published_date": "2026-09-11T20:57:36+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
+    "summary": "Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work as they seek to one-up each other with solutions to famous math problems. Each signatory has been awarded the Fields Medal, considered the most prestigious prize in mathematics.\nThis week, NYU professor Tristan Buckmaster accused OpenAI of pressuring him not to credit a collaborato",
+    "collected_at": "2026-09-12T04:37:22.937100+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/\"},\"content\":{\"title\":\"OpenAI’s feud with mathematicians is only escalating\",\"published_date\":\"2026-09-11T20:57:36+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/\",\"summary\":\"Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work as they seek to one-up each other with solutions to famous math problems. Each signatory has been awarded the Fields Medal, considered the most prestigious prize in mathematics.\\nThis week, NYU professor Tristan Buckmaster accused OpenAI of pressuring him not to credit a collaborato\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:22.937100+00:00\"}"
+  },
+  {
+    "id": 13,
+    "title": "One week left to book your exhibit table at TechCrunch Disrupt 2026",
+    "published_date": "2026-09-11T20:33:18+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/one-week-left-to-book-your-exhibit-table-at-techcrunch-disrupt-2026/",
+    "summary": "Book your exhibit table at TechCrunch Disrupt 2026 by September 18 at 11:59 p.m. PT. Tables are limited and can sell out before the deadline.\nIf you’re coming to TechCrunch Disrupt 2026 to find customers, meet investors, build partnerships, or put your product in front of the people who can move your business forward, don’t leave your presence to chance.\nThe exhibitor program gives your team a ded",
+    "collected_at": "2026-09-12T04:37:23.171580+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/one-week-left-to-book-your-exhibit-table-at-techcrunch-disrupt-2026/\"},\"content\":{\"title\":\"One week left to book your exhibit table at TechCrunch Disrupt 2026\",\"published_date\":\"2026-09-11T20:33:18+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/one-week-left-to-book-your-exhibit-table-at-techcrunch-disrupt-2026/\",\"summary\":\"Book your exhibit table at TechCrunch Disrupt 2026 by September 18 at 11:59 p.m. PT. Tables are limited and can sell out before the deadline.\\nIf you’re coming to TechCrunch Disrupt 2026 to find customers, meet investors, build partnerships, or put your product in front of the people who can move your business forward, don’t leave your presence to chance.\\nThe exhibitor program gives your team a ded\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:23.171580+00:00\"}"
+  },
+  {
+    "id": 14,
+    "title": "Final, final, final call for TechCrunch Disrupt 2026 Side Events",
+    "published_date": "2026-09-11T20:30:17+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/final-final-final-call-for-techcrunch-disrupt-2026-side-events/",
+    "summary": "The absolute last chance to apply to host an official Side Event during TechCrunch Disrupt 2026 is tonight, September 11, at 11:59 p.m. PT.\nNo more extensions. No more chances.\nDon’t just bring people together. Create value.\nIf you’re bringing your community to Disrupt, don’t just give them another place to gather. Give them a reason to show up — and give your organization a reason to host.\nA Side",
+    "collected_at": "2026-09-12T04:37:23.448324+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/final-final-final-call-for-techcrunch-disrupt-2026-side-events/\"},\"content\":{\"title\":\"Final, final, final call for TechCrunch Disrupt 2026 Side Events\",\"published_date\":\"2026-09-11T20:30:17+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/final-final-final-call-for-techcrunch-disrupt-2026-side-events/\",\"summary\":\"The absolute last chance to apply to host an official Side Event during TechCrunch Disrupt 2026 is tonight, September 11, at 11:59 p.m. PT.\\nNo more extensions. No more chances.\\nDon’t just bring people together. Create value.\\nIf you’re bringing your community to Disrupt, don’t just give them another place to gather. Give them a reason to show up — and give your organization a reason to host.\\nA Side\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:23.448324+00:00\"}"
+  },
+  {
+    "id": 15,
+    "title": "Kimi-maker Moonshot AI targets $2B in annual revenue",
+    "published_date": "2026-09-11T19:35:54+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
+    "summary": "One of China’s most prominent AI labs, Moonshot AI, believes it can turn its popular open-weight model into serious sales growth. On Friday, Bloomberg reported that the lab is targeting $2 billion in annualized revenue by the end of the year, double the company’s reported revenue run rate for August. It’s an aggressive goal that reflects the success of the company’s K3 model since its release this",
+    "collected_at": "2026-09-12T04:37:23.692428+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/\"},\"content\":{\"title\":\"Kimi-maker Moonshot AI targets $2B in annual revenue\",\"published_date\":\"2026-09-11T19:35:54+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/\",\"summary\":\"One of China’s most prominent AI labs, Moonshot AI, believes it can turn its popular open-weight model into serious sales growth. On Friday, Bloomberg reported that the lab is targeting $2 billion in annualized revenue by the end of the year, double the company’s reported revenue run rate for August. It’s an aggressive goal that reflects the success of the company’s K3 model since its release this\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:23.692428+00:00\"}"
+  },
+  {
+    "id": 16,
+    "title": "An Anthropic researcher’s doomsday warning comes at a very interesting time",
+    "published_date": "2026-09-11T18:41:49+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/podcast/an-anthropic-researchers-doomsday-warning-comes-at-a-very-interesting-time/",
+    "summary": "An Anthropic researcher resigned this week, warning in a post on X that the company is “racing straight to self-improving superintelligence and gambling with our lives”. The company’s own alignment lead even co-signed the message rather than walking it back. It’s the kind of doomer warning the AI industry has flirted with before, but the timing, with Anthropic reportedly preparing for an IPO, make",
+    "collected_at": "2026-09-12T04:37:23.919614+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/podcast/an-anthropic-researchers-doomsday-warning-comes-at-a-very-interesting-time/\"},\"content\":{\"title\":\"An Anthropic researcher’s doomsday warning comes at a very interesting time\",\"published_date\":\"2026-09-11T18:41:49+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/podcast/an-anthropic-researchers-doomsday-warning-comes-at-a-very-interesting-time/\",\"summary\":\"An Anthropic researcher resigned this week, warning in a post on X that the company is “racing straight to self-improving superintelligence and gambling with our lives”. The company’s own alignment lead even co-signed the message rather than walking it back. It’s the kind of doomer warning the AI industry has flirted with before, but the timing, with Anthropic reportedly preparing for an IPO, make\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:23.919614+00:00\"}"
+  },
+  {
+    "id": 17,
+    "title": "Nscale adds former OpenAI exec Fidji Simo to its board ahead of potential IPO",
+    "published_date": "2026-09-11T16:46:25+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://techcrunch.com/2026/09/11/nscale-adds-former-openai-exec-fidji-simo-to-its-board-ahead-of-potential-ipo/",
+    "summary": "Nscale, the buzzy U.K.-based AI data center startup, has appointed former OpenAI, Meta, and Instacart executive Fidji Simo to its board.\nSimo joins high-profile tech executives Sheryl Sandberg, Susan Decker, and Nick Clegg on Nscale’s board ahead of the startup’s anticipated IPO this fall.\nFormerly CEO of AGI deployment at OpenAI, essentially the No. 2 executive at the AI lab, Simo left the compan",
+    "collected_at": "2026-09-12T04:37:24.075113+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"TechCrunch AI\",\"url\":\"https://techcrunch.com/2026/09/11/nscale-adds-former-openai-exec-fidji-simo-to-its-board-ahead-of-potential-ipo/\"},\"content\":{\"title\":\"Nscale adds former OpenAI exec Fidji Simo to its board ahead of potential IPO\",\"published_date\":\"2026-09-11T16:46:25+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://techcrunch.com/2026/09/11/nscale-adds-former-openai-exec-fidji-simo-to-its-board-ahead-of-potential-ipo/\",\"summary\":\"Nscale, the buzzy U.K.-based AI data center startup, has appointed former OpenAI, Meta, and Instacart executive Fidji Simo to its board.\\nSimo joins high-profile tech executives Sheryl Sandberg, Susan Decker, and Nick Clegg on Nscale’s board ahead of the startup’s anticipated IPO this fall.\\nFormerly CEO of AGI deployment at OpenAI, essentially the No. 2 executive at the AI lab, Simo left the compan\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:24.075113+00:00\"}"
+  },
+  {
+    "id": 18,
+    "title": "ClickFix attacks infecting PCs and Macs are going viral",
+    "published_date": "2026-09-11T11:30:58+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://arstechnica.com/security/2026/09/clickfix-attacks-infecting-pcs-and-macs-are-going-viral/",
+    "summary": "Simplicity—combined with the difficulty of getting stuff done—makes ClickFix ideal.",
+    "collected_at": "2026-09-12T04:37:27.783106+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"Ars Technica AI\",\"url\":\"https://arstechnica.com/security/2026/09/clickfix-attacks-infecting-pcs-and-macs-are-going-viral/\"},\"content\":{\"title\":\"ClickFix attacks infecting PCs and Macs are going viral\",\"published_date\":\"2026-09-11T11:30:58+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://arstechnica.com/security/2026/09/clickfix-attacks-infecting-pcs-and-macs-are-going-viral/\",\"summary\":\"Simplicity—combined with the difficulty of getting stuff done—makes ClickFix ideal.\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:27.783106+00:00\"}"
+  },
+  {
+    "id": 19,
+    "title": "Roundtables: AI’s apocalypse crisis",
+    "published_date": "2026-09-11T20:05:06+00:00",
+    "date_confidence": "exact",
+    "article_url": "https://www.technologyreview.com/2026/09/11/1143936/roundtables-will-ai-really-kill-us-all/",
+    "summary": "Roundtables: AI’s apocalypse crisis\nRegister now for a subscriber-only conversation unpacking AI extinction fears.\nEmployees at the world's leading AI labs are saying there's a real possibility that advanced AI could destroy humanity. Are they right? Or is this more scaremongering and hype? Join MIT Technology Review executive editor Niall Firth for a conversation with senior AI editor Will Dougla",
+    "collected_at": "2026-09-12T04:37:31.127575+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"NEWS\",\"source\":{\"name\":\"MIT Tech Review AI\",\"url\":\"https://www.technologyreview.com/2026/09/11/1143936/roundtables-will-ai-really-kill-us-all/\"},\"content\":{\"title\":\"Roundtables: AI’s apocalypse crisis\",\"published_date\":\"2026-09-11T20:05:06+00:00\",\"date_confidence\":\"exact\",\"article_url\":\"https://www.technologyreview.com/2026/09/11/1143936/roundtables-will-ai-really-kill-us-all/\",\"summary\":\"Roundtables: AI’s apocalypse crisis\\nRegister now for a subscriber-only conversation unpacking AI extinction fears.\\nEmployees at the world's leading AI labs are saying there's a real possibility that advanced AI could destroy humanity. Are they right? Or is this more scaremongering and hype? Join MIT Technology Review executive editor Niall Firth for a conversation with senior AI editor Will Dougla\",\"company_mentions\":[]},\"collectedAt\":\"2026-09-12T04:37:31.127575+00:00\"}"
   }
 ]

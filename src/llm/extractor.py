@@ -215,6 +215,7 @@ class LLMExtractor:
         """
         schema_name = schema_cls.__name__
 
+        res = None
         if "Startup" in schema_name:
             # Extract company name from title/text lines
             name_match = re.search(r"^(?:Company|Startup|Name):\s*(.+)$", text, re.MULTILINE | re.IGNORECASE)
@@ -233,7 +234,7 @@ class LLMExtractor:
                     "data": {"employeeCount": emp_count, "description": text[:200]}
                 }
             }
-            return schema_cls.model_validate(payload)
+            res = schema_cls.model_validate(payload)
 
         elif "Product" in schema_name:
             startup_match = re.search(r"^(?:Company|Startup|By):\s*(.+)$", text, re.MULTILINE | re.IGNORECASE)
@@ -250,7 +251,7 @@ class LLMExtractor:
                     "description": text[:200]
                 }
             }
-            return schema_cls.model_validate(payload)
+            res = schema_cls.model_validate(payload)
 
         elif "ResearchPaper" in schema_name:
             lines = [l.strip() for l in text.split("\n") if l.strip()]
@@ -282,7 +283,7 @@ class LLMExtractor:
                     "abstract": text[:300]
                 }
             }
-            return schema_cls.model_validate(payload)
+            res = schema_cls.model_validate(payload)
 
         elif "News" in schema_name:
             lines = [l.strip() for l in text.split("\n") if l.strip()]
@@ -302,7 +303,7 @@ class LLMExtractor:
                     "summary": text[:300]
                 }
             }
-            return schema_cls.model_validate(payload)
+            res = schema_cls.model_validate(payload)
 
         elif "Job" in schema_name:
             comp_match = re.search(r"^(?:Company|At):\s*(.+)$", text, re.MULTILINE | re.IGNORECASE)
@@ -321,9 +322,11 @@ class LLMExtractor:
                     "title": text.split("\n")[0][:80]
                 }
             }
-            return schema_cls.model_validate(payload)
+            res = schema_cls.model_validate(payload)
 
-        return None
+        if res is not None:
+            self._log_telemetry("RuleBasedFallbackExtractor", 0, 0.001, True)
+        return res
 
     def _has_api_key_for_provider(self, provider: str) -> bool:
         """Returns True if environment has required API key for provider."""
@@ -348,3 +351,12 @@ class LLMExtractor:
         }
         self.call_logs.append(log_entry)
         logger.info(f"LLM Call Metric: provider={provider} tokens={tokens} latency={latency}s success={success} error={error}")
+
+    def get_provider_summary(self) -> Dict[str, int]:
+        """Returns a breakdown count of LLM provider calls."""
+        summary = {provider: 0 for provider in self.fallback_chain}
+        summary["RuleBasedFallbackExtractor"] = 0
+        for log in self.call_logs:
+            p = log.get("provider", "Unknown")
+            summary[p] = summary.get(p, 0) + 1
+        return summary

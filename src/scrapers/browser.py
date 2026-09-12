@@ -60,7 +60,7 @@ class PlaywrightBrowserFetcher:
                 """)
 
                 logger.info(f"[Playwright] Navigating to JS-rendered URL: {url}")
-                await page.goto(url, wait_until="networkidle", timeout=30000)
+                await page.goto(url, wait_until="domcontentloaded", timeout=15000)
 
                 # Emulate human delay
                 delay = random.uniform(1.5, 3.5)

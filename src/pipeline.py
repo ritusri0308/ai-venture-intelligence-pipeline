@@ -2,7 +2,7 @@
 Venture Intelligence Data Ingestion Pipeline - Main Entrypoint & Orchestrator.
 
 Usage:
-    python -m src.pipeline [--phase {all,phase1,phase2,phase3,phase4,export}]
+    python -m src.pipeline [--phase {all,phase1,phase2,phase3,phase4,phase5,export}]
 """
 
 import argparse
@@ -25,6 +25,7 @@ from src.schemas import (
     ResearchPaperRecord,
     StartupRecord,
 )
+from src.scrapers.browser import PlaywrightBrowserFetcher
 from src.scrapers.jobs import JobScraper
 from src.scrapers.news import NewsScraper
 from src.scrapers.papers import ResearchPaperScraper
@@ -56,9 +57,9 @@ class IngestionPipeline:
         """Phase I: Bulk Extraction (Research Papers, Startups, Products)."""
         logger.info("=== Starting Phase I: Bulk Extraction ===")
 
-        # 1. Research Papers with GitHub Metrics
+        # 1. Research Papers with GitHub Metrics & Multi-Category arXiv Pagination
         paper_scraper = ResearchPaperScraper()
-        papers = await paper_scraper.scrape_arxiv_papers(max_results=100)
+        papers = await paper_scraper.scrape_arxiv_papers(target_count=1000)
         await paper_scraper.close()
         for p in papers:
             self.repo.save_research_paper(p)
@@ -69,7 +70,6 @@ class IngestionPipeline:
         startups = await startup_scraper.scrape_startups(limit=1000)
         await startup_scraper.close()
         for s in startups:
-            # Resolve canonical entity name
             canon_name, map_rec = self.canonicalizer.resolve(s.content.entityName, entity_type="STARTUP")
             self.repo.save_entity_mapping(map_rec)
             s.content.entityName = canon_name
@@ -130,6 +130,17 @@ class IngestionPipeline:
             self.repo.save_entity_mapping(map_rec)
             logger.info(f"Resolved '{name}' -> '{canon}' ({map_rec.match_method}, confidence: {map_rec.confidence_score})")
 
+    async def run_phase_5(self):
+        """Phase V: Anti-Bot Strategy Execution with Playwright."""
+        logger.info("=== Starting Phase V: Playwright Anti-Bot Web Automation ===")
+        target_url = "https://techcrunch.com/category/artificial-intelligence/"
+        fetcher = PlaywrightBrowserFetcher()
+        html = await fetcher.fetch_html(target_url)
+        if html:
+            logger.info(f"[Phase V Playwright Success] Successfully rendered JS DOM for {target_url} ({len(html)} bytes returned).")
+        else:
+            logger.warning(f"[Phase V Playwright Note] Playwright fetch fallback completed for {target_url}.")
+
     def export_csv_and_json(self):
         """Phase Exports: Produces CSV and JSON files formatted for Google Sheets tabs."""
         logger.info("=== Generating CSV and JSON Exports ===")
@@ -164,8 +175,16 @@ class IngestionPipeline:
             self.run_phase_3()
         if phase in ("all", "phase4"):
             self.run_phase_4()
+        if phase in ("all", "phase5"):
+            await self.run_phase_5()
         if phase in ("all", "export"):
             self.export_csv_and_json()
+
+        # LLM Telemetry Provider Summary Report
+        summary = self.llm_extractor.get_provider_summary()
+        logger.info("==================================================")
+        logger.info(f"LLM Provider Call Breakdown Summary: {summary}")
+        logger.info("==================================================")
         logger.info("=== Pipeline Execution Complete ===")
 
 
@@ -173,7 +192,7 @@ def main():
     parser = argparse.ArgumentParser(description="Venture Intelligence Data Ingestion Pipeline")
     parser.add_argument(
         "--phase",
-        choices=["all", "phase1", "phase2", "phase3", "phase4", "export"],
+        choices=["all", "phase1", "phase2", "phase3", "phase4", "phase5", "export"],
         default="all",
         help="Specify individual phase to run or 'all' for complete pipeline.",
     )

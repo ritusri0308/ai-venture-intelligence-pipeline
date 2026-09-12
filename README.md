@@ -107,12 +107,14 @@ After running the pipeline, exports formatted for pasting straight into Google S
 ## Implemented Features vs. Architected Tradeoffs
 
 ### Real Live Record Metrics Achieved
-* **Startups**: **1,010 real startup records** scraped from daily-refreshed Y Combinator tag endpoints (`yc-oss` public API).
-* **Products**: **1,016 real product records** scraped from Hugging Face Spaces API across 20 AI categories.
-* **Research Papers**: **100 research papers** scraped from arXiv API XML with real GitHub repo & star count metrics.
-* **AI Jobs**: **35 job postings** scraped from Remotive API & HackerNews Jobs API.
-* **AI News**: **9 news articles** scraped from TechCrunch, VentureBeat, Ars Technica, MIT Tech Review with full-text Trafilatura extraction and 24-hour freshness filter.
-* **Entity Mappings**: **2,142 canonical resolution logs** generated via legal suffix normalization & RapidFuzz token sort matching against seed AI startups.
+* **Research Papers**: **1,000 real research paper records** scraped via multi-category arXiv API pagination (`cs.AI`, `cs.CL`, `cs.CV`, `cs.LG`, `cs.NE`, `stat.ML`) with GitHub repo correlation and star count metrics.
+* **Startups**: **1,017 real startup records** scraped from daily-refreshed Y Combinator tag endpoints (`yc-oss` public API).
+* **Products**: **1,038 real product records** scraped from Hugging Face Spaces API across 20 AI categories.
+* **AI Jobs**: **36 job postings** scraped from Remotive API & HackerNews Jobs API.
+* **AI News**: **19 news articles** scraped from TechCrunch, VentureBeat, Ars Technica, MIT Tech Review with full-text Trafilatura extraction and 24-hour freshness filter.
+* **Entity Mappings**: **6,220 canonical resolution logs** generated via legal suffix normalization & RapidFuzz token sort matching against seed AI startups.
+* **Phase III LLM Telemetry Summary**: Provider call breakdown tracked and logged (`{'gemini/gemini-1.5-flash': 1, 'groq/llama-3.1-8b-instant': 1, 'deepseek/deepseek-chat': 0, 'RuleBasedFallbackExtractor': 1}`).
+* **Phase V Anti-Bot Automation**: Executed live via `PlaywrightBrowserFetcher` rendering 316,538 bytes of JS DOM from TechCrunch AI.
 
 ### Architected for Scale (Documented in `architecture.md`)
 * **Kafka / RabbitMQ Queue Pool**: In production infra, scraper nodes run as stateless worker pods in Kubernetes scaling via KEDA queue lag metrics rather than single-process loops.
