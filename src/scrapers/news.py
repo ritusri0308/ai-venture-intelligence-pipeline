@@ -6,7 +6,7 @@ Date Normalization Module, Date Confidence Heuristics, and 24-Hour Filter.
 from datetime import datetime, timedelta, timezone
 import logging
 import re
-from typing import List, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 import trafilatura
@@ -128,8 +128,13 @@ class DateNormalizer:
 class NewsScraper(BaseScraper):
     """
     Crawls 5 AI news RSS & web sources, extracts full text via Trafilatura,
+    invokes LLMExtractor for per-article schema extraction & enrichment,
     normalizes dates, and applies a strict 24-hour filter.
     """
+
+    def __init__(self, concurrency: int = 5, extractor: Optional[Any] = None):
+        super().__init__(concurrency=concurrency)
+        self.extractor = extractor
 
     async def scrape_recent_news(self, sources: Optional[List[dict]] = None) -> List[NewsRecord]:
         sources_to_scrape = sources or NEWS_SOURCES
@@ -157,14 +162,24 @@ class NewsScraper(BaseScraper):
 
                 # Fetch full text via Trafilatura
                 full_html = await self.fetch_text(article_url)
-                summary = None
+                extracted_text = None
                 if full_html:
                     extracted_text = trafilatura.extract(full_html)
-                    if extracted_text:
-                        summary = extracted_text[:400]
 
-                if not summary:
-                    summary = item.get("description", "")[:400]
+                raw_body = extracted_text or item.get("description", "") or title
+                summary = raw_body[:400]
+
+                # Invocation of LLMExtractor per news article record
+                company_mentions = []
+                if self.extractor:
+                    prompt_text = f"Title: {title}\nURL: {article_url}\nArticle Content:\n{raw_body[:1500]}"
+                    llm_rec = self.extractor.extract(prompt_text, NewsRecord, system_prompt="Extract AI news headline, summary, and company mentions.")
+                    if llm_rec and llm_rec.content:
+                        if llm_rec.content.title:
+                            title = llm_rec.content.title
+                        if llm_rec.content.summary:
+                            summary = llm_rec.content.summary
+                        company_mentions = getattr(llm_rec.content, "company_mentions", [])
 
                 # Date Normalization
                 pub_dt, date_confidence = DateNormalizer.parse_date(raw_pub_date)
@@ -181,7 +196,7 @@ class NewsScraper(BaseScraper):
                             date_confidence=date_confidence,
                             article_url=article_url,
                             summary=summary,
-                            company_mentions=[]
+                            company_mentions=company_mentions
                         )
                     )
                     all_articles.append(rec)

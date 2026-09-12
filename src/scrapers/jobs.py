@@ -6,7 +6,7 @@ Imports from reliable APIs: Remotive, HackerNews Jobs API, WeWorkRemotely, etc.
 from datetime import datetime, timedelta, timezone
 import json
 import logging
-from typing import List, Optional
+from typing import Any, List, Optional
 from bs4 import BeautifulSoup
 
 from src.schemas import JobContent, JobRecord, SourceInfo
@@ -19,8 +19,13 @@ logger = logging.getLogger("JobScraper")
 class JobScraper(BaseScraper):
     """
     Crawls 5 AI job sources (Remotive API, HackerNews Jobs API, WeWorkRemotely, etc.),
+    invokes LLMExtractor for per-job schema extraction & enrichment,
     normalizes posting dates, categorizes role families, and applies 24-hour freshness filter.
     """
+
+    def __init__(self, concurrency: int = 5, extractor: Optional[Any] = None):
+        super().__init__(concurrency=concurrency)
+        self.extractor = extractor
 
     async def scrape_recent_jobs(self) -> List[JobRecord]:
         logger.info("Crawling AI job sources...")
@@ -61,6 +66,18 @@ class JobScraper(BaseScraper):
                 title = item.get("title") or "AI Engineer"
                 pub_date_str = item.get("publication_date")
                 job_url = item.get("url") or "https://remotive.com"
+                role_family = "Engineering"
+                is_remote = True
+
+                # Invocation of LLMExtractor per job record
+                if self.extractor:
+                    prompt_text = f"Company: {company}\nTitle: {title}\nJob Posting URL: {job_url}\nDescription: {item.get('description', '')[:500]}"
+                    llm_rec = self.extractor.extract(prompt_text, JobRecord, system_prompt="Extract hiring company name, title, role family, and remote work status.")
+                    if llm_rec and llm_rec.content:
+                        company = llm_rec.content.company or company
+                        title = llm_rec.content.title or title
+                        role_family = llm_rec.content.role_family or role_family
+                        is_remote = llm_rec.content.is_remote
 
                 pub_dt, _ = DateNormalizer.parse_date(pub_date_str)
                 records.append(
@@ -71,8 +88,8 @@ class JobScraper(BaseScraper):
                         content=JobContent(
                             company=company,
                             date=pub_dt.strftime("%Y-%m-%d"),
-                            is_remote=True,
-                            role_family="Engineering",
+                            is_remote=is_remote,
+                            role_family=role_family,
                             title=title,
                             job_url=job_url
                         )
@@ -104,6 +121,16 @@ class JobScraper(BaseScraper):
 
                 pub_dt = datetime.fromtimestamp(timestamp, timezone.utc) if timestamp else datetime.now(timezone.utc)
                 company = title.split(" is hiring ")[0] if " is hiring " in title else title.split()[0]
+                role_family = "Engineering"
+                is_remote = "remote" in title.lower()
+
+                # Invocation of LLMExtractor per job record
+                if self.extractor:
+                    prompt_text = f"Job Posting: {title}\nURL: {hn_url}"
+                    llm_rec = self.extractor.extract(prompt_text, JobRecord, system_prompt="Extract hiring company, role family, and remote status.")
+                    if llm_rec and llm_rec.content:
+                        company = llm_rec.content.company or company
+                        role_family = llm_rec.content.role_family or role_family
 
                 records.append(
                     JobRecord(
@@ -113,8 +140,8 @@ class JobScraper(BaseScraper):
                         content=JobContent(
                             company=company,
                             date=pub_dt.strftime("%Y-%m-%d"),
-                            is_remote="remote" in title.lower(),
-                            role_family="Engineering",
+                            is_remote=is_remote,
+                            role_family=role_family,
                             title=title,
                             job_url=hn_url
                         )

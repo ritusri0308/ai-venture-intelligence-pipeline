@@ -91,16 +91,16 @@ class IngestionPipeline:
         """Phase II: Freshness-Critical Signals (AI News & AI Jobs within 24 hours)."""
         logger.info("=== Starting Phase II: Freshness-Critical Signals ===")
 
-        # 1. AI News (5 sources, 24h filter, full text via Trafilatura)
-        news_scraper = NewsScraper()
+        # 1. AI News (5 sources, 24h filter, full text via Trafilatura, LLMExtractor per-article enrichment)
+        news_scraper = NewsScraper(extractor=self.llm_extractor)
         news_items = await news_scraper.scrape_recent_news()
         await news_scraper.close()
         for n in news_items:
             self.repo.save_news(n)
         logger.info(f"Phase II: Saved {len(news_items)} 24h news items to store.")
 
-        # 2. AI Jobs (5 sources, 24h filter)
-        job_scraper = JobScraper()
+        # 2. AI Jobs (5 sources, 24h filter, LLMExtractor per-job enrichment)
+        job_scraper = JobScraper(extractor=self.llm_extractor)
         job_items = await job_scraper.scrape_recent_jobs()
         await job_scraper.close()
         for j in job_items:

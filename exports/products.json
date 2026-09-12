@@ -10378,5 +10378,15 @@
     "source_url": "https://huggingface.co/spaces/unlisboa/bart_qa_assistant",
     "collected_at": "2026-09-12T04:37:13.067414+00:00",
     "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"PRODUCT\",\"source\":{\"name\":\"Hugging Face Spaces\",\"url\":\"https://huggingface.co/spaces/unlisboa/bart_qa_assistant\"},\"content\":{\"startupName\":\"Unlisboa\",\"productName\":\"Bart Qa Assistant\",\"pricingModel\":\"FREE\",\"description\":\"AI Application (GRADIO) on Hugging Face Spaces with 3 likes.\",\"category\":\"gradio\"},\"collectedAt\":\"2026-09-12T04:37:13.067414+00:00\"}"
+  },
+  {
+    "id": 1039,
+    "startup_name": "Specimba",
+    "product_name": "Moonshotai Kimi K2.7 Code",
+    "pricing_model": "FREE",
+    "source_name": "Hugging Face Spaces",
+    "source_url": "https://huggingface.co/spaces/specimba/moonshotai-Kimi-K2.7-Code",
+    "collected_at": "2026-09-12T04:45:10.618597+00:00",
+    "raw_json": "{\"schemaVersion\":\"1.0\",\"recordType\":\"PRODUCT\",\"source\":{\"name\":\"Hugging Face Spaces\",\"url\":\"https://huggingface.co/spaces/specimba/moonshotai-Kimi-K2.7-Code\"},\"content\":{\"startupName\":\"Specimba\",\"productName\":\"Moonshotai Kimi K2.7 Code\",\"pricingModel\":\"FREE\",\"description\":\"AI Application (GRADIO) on Hugging Face Spaces with 1 likes.\",\"category\":\"gradio\"},\"collectedAt\":\"2026-09-12T04:45:10.618597+00:00\"}"
   }
 ]

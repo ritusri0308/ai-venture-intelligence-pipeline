@@ -168,7 +168,8 @@ class SQLiteRepository(RepositoryInterface):
                     match_method TEXT NOT NULL,
                     confidence_score REAL NOT NULL,
                     entity_type TEXT NOT NULL,
-                    created_at TEXT NOT NULL
+                    created_at TEXT NOT NULL,
+                    UNIQUE(raw_name, entity_type)
                 );
             """)
 
@@ -318,7 +319,7 @@ class SQLiteRepository(RepositoryInterface):
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT INTO entity_mapping_log (raw_name, canonical_name, match_method, confidence_score, entity_type, created_at)
+                INSERT OR REPLACE INTO entity_mapping_log (raw_name, canonical_name, match_method, confidence_score, entity_type, created_at)
                 VALUES (?, ?, ?, ?, ?, ?)
             """, (
                 record.raw_name,

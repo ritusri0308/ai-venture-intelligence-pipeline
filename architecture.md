@@ -159,7 +159,11 @@ A venture intelligence pipeline requires balancing structured relational queries
 | **Multi-Tier LLM Orchestrator** | **Complete** | LiteLLM fallback chain + 429 backoff + 413 semantic chunking + telemetry breakdown logging (`gemini` → `groq` → `deepseek` → `rule_based`). |
 | **Scraper Suite** | **Complete** | Paginated arXiv scraper (**1,000 real papers**), `yc-oss` public YC tag API scraper (**1,017 real startups**), Hugging Face Spaces API scraper (**1,038 real products**), 5 AI news feeds (Trafilatura), 5 AI job feeds (HN + Remotive APIs). |
 | **Anti-Bot Strategy** | **Complete** | Playwright async Chromium fetcher executed live against TechCrunch AI (rendered 316,538 bytes DOM). |
-| **Entity Resolution** | **Complete** | Legal suffix stripping + RapidFuzz matching against seed 50 list + Mapping log (**6,220 records**). |
-| **Repository & Storage** | **Complete** | `RepositoryInterface` abstraction + `SQLiteRepository` with SHA-256 deduplication. |
+| **Entity Resolution** | **Complete** | Legal suffix stripping + RapidFuzz matching against seed 50 list + Deduplicated mapping log (**1,850+ unique entity mappings**, 1-to-1 canonical mapping per entity via `UNIQUE(raw_name, entity_type)`). |
+| **Repository & Storage** | **Complete** | `RepositoryInterface` abstraction + `SQLiteRepository` with SHA-256 deduplication and idempotent `INSERT OR REPLACE` mapping log. |
 | **CLI & Exports** | **Complete** | Single entrypoint (`python -m src.pipeline`) producing Google-Sheets-ready CSV/JSON files. |
-| **Real Live Record Counts** | **1,000+ Target Achieved Across All 3 Core Entity Types** | **1,000 Research Papers** (arXiv multi-category pagination), **1,017 Startups** (YC daily index), **1,038 Products** (HF Spaces API), **36 AI Jobs**, **19 24h AI News Items**, **6,220 Entity Mappings**. |
+| **Real Live Record Counts** | **1,000+ Target Achieved Across All 3 Core Entity Types** | **1,000 Research Papers** (arXiv multi-category pagination), **1,017 Startups** (YC daily index), **1,038 Products** (HF Spaces API), **36 AI Jobs**, **19 24h AI News Items**, **1,851 Unique Entity Mappings**. |
+
+> [!NOTE]
+> **Freshness Window vs. Volume Tradeoff**:
+> AI Jobs (36 records) and AI News (19 records) are high-freshness signals filtered strictly to the preceding 24-hour sliding window. Unlike static bulk entities (Startups, Products, Research Papers) where multi-page API scraping achieves 1,000+ historical records, job postings and news items are naturally bounded by real-world daily publishing volume across scraped feeds. This record count reflects strict freshness filtering (zero stale records >24h old) rather than under-scraping.
