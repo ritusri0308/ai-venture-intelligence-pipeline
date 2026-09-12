@@ -14,7 +14,7 @@ The system scrapes structured entity data (startups, products, research papers w
 * **Language & Runtime**: Python 3.11+ / 3.12, `asyncio`, `aiohttp`
 * **Browser Automation / Anti-Bot**: `playwright` (async Chromium context with header/viewport randomization)
 * **Schema Validation**: `pydantic` V2
-* **LLM Orchestration**: `litellm` (Fallback chain: `gemini/gemini-1.5-flash` → `groq/llama-3.3-70b-versatile` → `deepseek/deepseek-chat` → Deterministic Extractor)
+* **LLM Orchestration**: `litellm` (Fallback chain: `gemini/gemini-3.5-flash-lite` → `groq/openai/gpt-oss-20b` → `deepseek/deepseek-chat` → Deterministic Extractor)
 * **Resilience & Retry**: `tenacity` (exponential backoff + jitter)
 * **Content Extraction**: `trafilatura` (full-text news main content extraction)
 * **Entity Resolution**: `rapidfuzz` (legal suffix regex normalization + token sort fuzzy matching)
@@ -112,8 +112,8 @@ After running the pipeline, exports formatted for pasting straight into Google S
 * **Products**: **1,038 real product records** scraped from Hugging Face Spaces API across 20 AI categories.
 * **AI Jobs**: **36 job postings** scraped from Remotive API & HackerNews Jobs API.
 * **AI News**: **19 news articles** scraped from TechCrunch, VentureBeat, Ars Technica, MIT Tech Review with full-text Trafilatura extraction and 24-hour freshness filter.
-* **Entity Mappings**: **6,220 canonical resolution logs** generated via legal suffix normalization & RapidFuzz token sort matching against seed AI startups.
-* **Phase III LLM Telemetry Summary**: Provider call breakdown tracked and logged (`{'gemini/gemini-1.5-flash': 1, 'groq/llama-3.1-8b-instant': 1, 'deepseek/deepseek-chat': 0, 'RuleBasedFallbackExtractor': 1}`).
+* **Entity Mappings**: **1,851 deduplicated canonical resolution logs** generated via legal suffix normalization & RapidFuzz token sort matching against seed AI startups (`UNIQUE(raw_name, entity_type)`).
+* **Phase III LLM Telemetry Summary**: 98.5% cloud LLM extraction success rate across live runs (`{'gemini/gemini-3.5-flash-lite': 55, 'groq/openai/gpt-oss-20b': 9, 'deepseek/deepseek-chat': 0, 'RuleBasedFallbackExtractor': 1}`).
 * **Phase V Anti-Bot Automation**: Executed live via `PlaywrightBrowserFetcher` rendering 316,538 bytes of JS DOM from TechCrunch AI.
 
 ### Architected for Scale (Documented in `architecture.md`)

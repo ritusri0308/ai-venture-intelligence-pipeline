@@ -26,8 +26,8 @@ GITHUB_API_BASE = "https://api.github.com"
 
 # LLM Provider Fallback Chain (litellm model names)
 LLM_FALLBACK_CHAIN: List[str] = [
-    "gemini/gemini-1.5-flash",
-    "groq/llama-3.1-8b-instant",
+    "gemini/gemini-3.5-flash-lite",
+    "groq/openai/gpt-oss-20b",
     "deepseek/deepseek-chat",
 ]
 

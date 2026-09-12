@@ -102,10 +102,15 @@ class LLMExtractor:
 
         for attempt in range(1, max_attempts + 1):
             try:
+                if "groq" in provider:
+                    logger.info(f"[API Key Check] GROQ_API_KEY present: {bool(os.getenv('GROQ_API_KEY'))}")
+                elif "gemini" in provider:
+                    logger.info(f"[API Key Check] GEMINI_API_KEY present: {bool(os.getenv('GEMINI_API_KEY'))}")
+
                 response = litellm.completion(
                     model=provider,
                     messages=[{"role": "user", "content": prompt}],
-                    temperature=0.0,
+                    temperature=1.0,
                     response_format={"type": "json_object"}
                 )
                 latency = round(time.time() - start_time, 3)
@@ -129,7 +134,7 @@ class LLMExtractor:
                 corr_response = litellm.completion(
                     model=provider,
                     messages=[{"role": "user", "content": corrected_prompt}],
-                    temperature=0.0,
+                    temperature=1.0,
                     response_format={"type": "json_object"}
                 )
                 corr_content = corr_response.choices[0].message.content or ""

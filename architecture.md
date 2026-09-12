@@ -48,8 +48,8 @@ Every scraped record must be extracted into a strict Pydantic JSON schema. The L
 
 ### 2.1 Provider Fallback Hierarchy
 The system routes requests through an automated failover chain:
-1. **Tier 1 (Primary)**: `gemini/gemini-1.5-flash` — High throughput, low latency, cost-optimized.
-2. **Tier 2 (Secondary)**: `groq/llama-3.3-70b-versatile` — High RPM via hardware LPUs.
+1. **Tier 1 (Primary)**: `gemini/gemini-3.5-flash-lite` — High throughput, low latency, cost-optimized.
+2. **Tier 2 (Secondary)**: `groq/openai/gpt-oss-20b` — High RPM via hardware LPUs.
 3. **Tier 3 (Tertiary)**: `deepseek/deepseek-chat` — Low-cost fallback for complex parsing.
 4. **Tier 4 (Local Rule-Based)**: Deterministic regex/heuristic extractor — Executes offline if all cloud APIs are unreachable.
 
